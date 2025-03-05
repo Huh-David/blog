@@ -33,9 +33,9 @@ const posts = (await getCollection("blog"))
                     <img
                       src={post.data.heroImage}
                       alt=""
-                      width={240}
-                      height={180}
-                      class="hidden md:block rounded-md object-cover h-[180px] w-[240px]"
+                      width={300}
+                      height={225}
+                      class="hidden md:block rounded-md object-cover h-[225px] w-[300px]"
                     />
                     <img
                       src={post.data.heroImage}
@@ -47,15 +47,15 @@ const posts = (await getCollection("blog"))
                   </a>
                 </div>
                 <div class="flex flex-col flex-grow">
-                  <div class="flex items-center justify-between mb-1">
+                  <div class="flex flex-col items-start items-center justify-between mb-1">
+                    <div class="hidden md:block text-sm">
+                      <FormattedDate date={post.data.pubDate} />
+                    </div>
                     <a href={`/blog/${post.id}/`} class="hover:text-blue-300">
                       <h4 class="text-xl font-bold text-white">
                         {post.data.title}
                       </h4>
                     </a>
-                    <div class="hidden mg:block">
-                      <FormattedDate date={post.data.pubDate} />
-                    </div>
                   </div>
                   <p class="text-gray-700 text-sm line-clamp-2">
                     {post.data.description}
